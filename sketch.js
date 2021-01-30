@@ -1,5 +1,5 @@
 // MADE BY NITISH
-// WILL COMPLETE ALL PROJECTS AND OTHER STUFF TILL SUNDAY 
+// WILL COMPLETE ALL PROJECTS AND OTHER STUFF TILL SUNDAY
 const Engine = Matter.Engine,
   World = Matter.World,
   Bodies = Matter.Bodies,
@@ -12,8 +12,8 @@ var bg;
 
 function preload() {
   boy = loadImage("images/boy.png");
-  treeObj=loadImage("images/tree.png");
-  bg=loadImage("images/bg.jpg");
+  treeObj = loadImage("images/tree.png");
+  bg = loadImage("images/bg.jpg");
 }
 
 function setup() {
@@ -29,23 +29,25 @@ function setup() {
 
   groundObject = new Ground(width / 2, height - 30, width, 70);
   launcher = new Launcher(stone.body, { x: 275, y: 420 });
-  
-  reset=createButton("RESET");
-  reset.position(innerWidth/2-50,30);
+
+  reset = createButton("RESET");
+  reset.position(innerWidth / 2 - 50, 30);
   reset.style("background", "#00539CFF");
   reset.style("color", "white");
   reset.style("padding", "10px 28px");
   reset.style("text-align", "center");
   reset.style("border-radius", "10px");
-  reset.mousePressed(()=>{window.location.reload()});
+  reset.mousePressed(() => {
+    window.location.reload();
+  });
 
   Engine.run(engine);
 }
 
 function draw() {
   background(bg);
-  image(boy, 200,295, 150, 250);
-  image(treeObj, 800, 0,500,600);
+  image(boy, 200, 295, 150, 250);
+  image(treeObj, 800, 0, 500, 600);
 
   mangoes.forEach((mango) => {
     mango.display();
@@ -58,8 +60,8 @@ function draw() {
 }
 
 function mouseDragged() {
-  if(stone.body.position.x<300)
-  Body.setPosition(stone.body, { x: mouseX, y: mouseY });
+  if (stone.body.position.x < 300)
+    Body.setPosition(stone.body, { x: mouseX, y: mouseY });
 }
 
 function mouseReleased() {

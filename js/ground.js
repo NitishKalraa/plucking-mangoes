@@ -8,14 +8,14 @@ class Ground {
     this.w = w;
     this.h = h;
     this.body = Bodies.rectangle(x, y, w, h, options);
-    this.image=loadImage("images/ground.jpg");
+    this.image = loadImage("images/ground.jpg");
     World.add(world, this.body);
   }
   display() {
     push();
     translate(this.body.position.x, this.body.position.y);
     imageMode(CENTER);
-    image(this.image,0, 0, this.w, this.h);
+    image(this.image, 0, 0, this.w, this.h);
     pop();
   }
 }
