@@ -5,7 +5,7 @@ const Engine = Matter.Engine,
   Bodies = Matter.Bodies,
   Body = Matter.Body,
   Constraint = Matter.Constraint;
-
+var reset;
 var treeObj, stone, groundObject, launcher;
 var mangoes = [];
 var bg;
@@ -29,6 +29,15 @@ function setup() {
 
   groundObject = new Ground(width / 2, height - 30, width, 70);
   launcher = new Launcher(stone.body, { x: 275, y: 420 });
+  
+  reset=createButton("RESET");
+  reset.position(innerWidth/2-50,30);
+  reset.style("background", "#00539CFF");
+  reset.style("color", "white");
+  reset.style("padding", "10px 28px");
+  reset.style("text-align", "center");
+  reset.style("border-radius", "10px");
+  reset.mousePressed(()=>{window.location.reload()});
 
   Engine.run(engine);
 }
