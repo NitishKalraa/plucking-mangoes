@@ -4,12 +4,11 @@
     background-image: url("images/background.png");
   }
   canvas {
-    display: block;
-    border:10px solid whitesmoke;
+    display:block;
+    border:10px solid whitesmoke; 
     border-radius: 10px; 
-    margin-left: 15%;
-    margin-right: 15%;
-    margin-top: 5%;
+    margin: auto;
+    margin-top:10% ;
   }
   
   
